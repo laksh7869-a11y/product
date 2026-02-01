@@ -298,10 +298,46 @@ textarea::placeholder {
   font-weight: 700;
 }
 
-.page.planner{
-    display: block;
-}
-
  .page.planner h2{
     font-size: 70px;
+}
+
+.page.planner .dayplanner{
+    background-color: var(--sec);
+    height: 85%;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.page.planner .dayplanner .dayplanner-time{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+    width: 49%;
+}    
+
+.dayplanner .dayplanner-time p{
+    position: absolute;
+    top: 10%;
+    left: .5%;
+    font-size:18px;
+}
+
+.dayplanner .dayplanner-time input{
+    padding: 20px 40px;
+    width: 100%;
+    background-color: var(--ter);
+    border: none;
+    font-size: 25px;
+    border-radius: 10px;
+    padding-top: 32px;
+    outline: none;
 }
