@@ -42,13 +42,17 @@
             <div class="todo-container">
                 <div class="addtask">
                     <form>
-                       <input type="text" placeholder="Enter Your Task">
-                        <textarea placeholder="Enter Your Task Description" id="" cols="30" rows="10"></textarea>
+                       <input id="task-input" type="text" placeholder="Enter Your Task Here">
+                        <textarea placeholder="Enter Your Task Description" id="textarea" cols="30" rows="10"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" name="" id="checkbox">
+                            <label for="checkbox">Mark as Important!</label>
+                        </div>
                         <button class="add">Add Task</button>
                     </form>
                 </div>
                 <div class="alltask">
-
+                    
                 </div>
             </div>
         </section>
@@ -56,6 +60,11 @@
         <section class="page planner">
             <button class="close" id="1"><i class="ri-arrow-left-long-line"></i> Close</button>
             <h2>Daily Planner </h2>
+            
+            <div class="dayplanner">
+                <p>6:00</p>
+                <input type="text" placeholder="...">
+            </div>
         </section>
 
         <section class="page motivation">

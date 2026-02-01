@@ -113,9 +113,14 @@ i{
     scale: 0.95;
 }
 
+.close:hover{
+    background-color: red;
+    color: white;
+}
 
 
-.todo h2{
+
+.page .todo h2{
     font-size: 70px;
 }
 
@@ -148,10 +153,9 @@ i{
     flex-direction: column;
     align-items: flex-start;
     padding: 30px;
-    margin-bottom: 20px;
 }
 
-.addtask form input{
+.addtask form input#task-input{
     width: 100%;
     padding: 15px 20px;
     font-size: 20px;
@@ -163,8 +167,8 @@ i{
 }
 
 
-.addtask form textarea{
-    width: 100%;
+.addtask form #textarea{
+     width: 100%;
     padding: 15px 20px;
     font-size: 20px;
     background-color: var(--ter);
@@ -174,18 +178,8 @@ i{
     margin-bottom: 10px
 }
 
-.addtask form textarea{
-    width: 100%;
-    padding: 15px 20px;
-    font-size: 20px;
-    background-color: var(--ter);
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    margin-bottom: 10px
-}
 
-.addtask form button{
+.todo .todo-container .addtask form button{
     width: 100%;
     padding: 15px 20px;
     font-size: 20px;
@@ -196,8 +190,118 @@ i{
     margin-bottom: 10px;
     font-weight: 700;
     transition: all ease 0.3s;
+    cursor: pointer;
+    
 }
 
 .addtask form button:active{
     scale: 0.95;
+}
+
+
+.todo .todo-container .alltask{
+    height: 100%;
+    width: 68%;
+    background-color: #810CA8;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.task{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--ter);
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task h5{
+    font-size: 25px;
+    color: var(--quad);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.task h5 span{
+    background-color: red;
+    color: whitesmoke;
+    padding: 3px 4px;
+    border-radius: 50px;
+    font-size: 10px;
+}
+
+.task h5 span.true{
+    opacity: 1;
+}
+
+.task h5 span.false{
+    opacity: 0;
+}
+
+.task button{
+    padding: 15px 20px;
+    font-size: 20px;
+    background-color: var(--sec);
+    border-radius: 50px;
+    border: solid 2px white;
+    font-weight: 700;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.task button:hover{
+    background-color: rgb(34, 158, 0);
+    color: white;
+}
+
+.task button:active{
+    scale: 0.95;
+}   
+
+.mark-imp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.mark-imp label{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.mark-imp #checkbox,label:hover{
+    cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--quad);
+  font-family: ask;
+  font-weight: 700;
+}
+
+textarea::placeholder {
+  color: var(--quad);
+  font-family: ask;
+  font-weight: 700;
+}
+
+.page.planner{
+    display: block;
+}
+
+ .page.planner h2{
+    font-size: 70px;
 }
