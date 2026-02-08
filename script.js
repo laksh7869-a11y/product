@@ -20,7 +20,6 @@ openfunction();
 
 
 
-
 function todopage() {
     let currentTask = []
 
@@ -79,7 +78,7 @@ function todopage() {
     })
 }
 
-todopage(); 
+todopage();
 
 
 
@@ -120,3 +119,102 @@ function dailyplanner() {
 }
 
 dailyplanner();
+
+
+
+function motivational_quote() {
+    var motivationalQuote = document.querySelector('.motivation2 h1');
+    var motivationalAuthour = document.querySelector('.name h3');
+
+    async function fetchQuote() {
+        let response = await fetch('https://api.quotable.io/random')
+        let data = await response.json()
+
+        motivationalQuote.innerText = data.content
+        motivationalAuthour.innerText = `~ ${data.author}`
+    }
+
+    fetchQuote()
+}
+motivational_quote();
+
+
+
+function pomodoroTimer() {
+    let totalSeconds = 1500;
+
+    let timer = document.querySelector('.page.pomodoro .pomo-timer h1');
+    let strtbtn = document.querySelector('.page.pomodoro .pomo-timer .start-timer');
+    let pausetbtn = document.querySelector('.page.pomodoro .pomo-timer .pause-timer');
+    let resetbtn = document.querySelector('.page.pomodoro .pomo-timer .reset-timer');
+    let session = document.querySelector('.page.pomodoro .session');
+    var isWorkSession = true
+
+
+
+
+    let timeinterval = null;
+
+
+    function updateTimer() {
+        let minutes = Math.floor(totalSeconds / 60)
+        let seconds = totalSeconds % 60
+
+        timer.innerHTML = `${String(minutes).padStart(2, 0)}:${String(seconds).padStart(2, 0)}`
+    }
+
+    function startTimer() {
+        if (isWorkSession) {
+
+            timeinterval = setInterval(function () {
+                if (totalSeconds > 0) {
+                    totalSeconds--
+                    updateTimer()
+                } else {
+                    isWorkSession = false
+                    clearInterval(timeinterval)
+                    timer.innerHTML = '05:00'
+                    session.innerHTML = 'Take a Break'
+                    session.style.backgroundColor = 'var(--blue)'
+                    totalSeconds = 5 * 60
+                }
+            }, 10)
+        } else {
+
+
+            timeinterval = setInterval(function () {
+                if (totalSeconds > 0) {
+                    totalSeconds--
+                    updateTimer()
+                } else {
+                    isWorkSession = true
+                    clearInterval(timeinterval)
+                    timer.innerHTML = '25:00'
+                    session.innerHTML = 'Work Session'
+                    session.style.backgroundColor = 'yellowgreen'
+                    totalSeconds = 25 * 60
+                }
+            }, 10)
+        }
+    }
+
+    function pauseTimer() {
+        clearInterval(timeinterval)
+    }
+
+    function resetTimer() {
+        clearInterval(timeinterval)
+        totalSeconds = 1500
+        updateTimer()
+    }
+
+    strtbtn.addEventListener('click', startTimer)
+
+    pausetbtn.addEventListener('click', pauseTimer)
+    pausetbtn.addEventListener('click', pauseTimer)
+    resetbtn.addEventListener('click', resetTimer)
+
+
+}
+
+pomodoroTimer();
