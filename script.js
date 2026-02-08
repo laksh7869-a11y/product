@@ -178,7 +178,7 @@ function pomodoroTimer() {
                     session.style.backgroundColor = 'var(--blue)'
                     totalSeconds = 5 * 60
                 }
-            }, 10)
+            }, 1000)
         } else {
 
 
@@ -194,7 +194,7 @@ function pomodoroTimer() {
                     session.style.backgroundColor = 'yellowgreen'
                     totalSeconds = 25 * 60
                 }
-            }, 10)
+            }, 1000)
         }
     }
 
@@ -218,3 +218,58 @@ function pomodoroTimer() {
 }
 
 pomodoroTimer();
+
+function weather() {
+    let APIkey='2ec684cc794448069d863616260802';
+let city='mumbai'
+let dayTime=document.querySelector('.header1 h1');
+let dayDate=document.querySelector('.header1 h2');
+let temprature=document.querySelector('.header2 h2');
+let humidity=document.querySelector('.header2 .hum');
+let precipitation=document.querySelector('.header2 .precip');
+let condition=document.querySelector('.header2 h4');
+let wind=document.querySelector('.header2 .wind');
+
+async function weatherAPICall(){
+    let response=await fetch(`https://api.weatherapi.com/v1/current.json?key=${APIkey}&q=${city}&aqi=no`);
+    let data=await response.json();
+    temprature.innerHTML=`${data.current.temp_c}°C`;
+    condition.innerHTML=`${data.current.condition.text}`;
+    humidity.innerHTML=`Humidity : ${data.current.humidity}%`;
+    precipitation.innerHTML=`Precipitation : ${data.current.precip_in}%`;
+    wind.innerHTML=`Wind : ${data.current.wind_kph} KpH`;
+}
+
+weatherAPICall();
+
+function timeData(){
+    let totalDaysOfWeek=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    let totalMonths=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let date=new Date();
+    let dayOfWeek=totalDaysOfWeek[date.getDay()];
+    let hours=date.getHours();
+    let minutes=date.getMinutes();
+    let monthName=totalMonths[date.getMonth()];
+    let dateofMonth=date.getDate()
+    let year=date.getFullYear();
+
+    dayDate.innerHTML=`${String(dateofMonth).padStart(2, 0)} ${monthName} ${year}`;
+    
+
+
+        if(hours<12){
+            dayTime.innerHTML=`${dayOfWeek} ${String(hours).padStart(2, 0)}:${String(minutes).padStart(2, 0)} AM`;
+        }
+        else{
+            dayTime.innerHTML=`${dayOfWeek} ${String(hours-12).padStart(2, 0)}:${String(minutes).padStart(2, 0)} PM`;
+
+        }
+
+
+}
+setInterval(()=>{
+    timeData();
+},1000)
+}
+
+weather();

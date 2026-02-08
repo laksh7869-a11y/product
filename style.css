@@ -51,12 +51,71 @@ section.allelem {
     height: 100%;
     width: 100%;
     padding: 40px;
-    padding-top: 80px;
+    overflow: auto;
+    position: absolute;
+}
+
+section.allelem header {
+    
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section.allelem header .header1 h2{
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+}
+
+section.allelem header .header1 h1{
+    font-size: 70px;
+    color: white;
+    
+}
+
+section.allelem header .header1 h4{
+    font-size: 50px;
+    color: white;
+    font-weight: 500;
+    margin-top: 40px;
+}
+
+section.allelem header .header2 h2{
+    font-size: 50px;
+    color: white;
+}
+
+section.allelem header .header2 h4{
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+section.allelem header .header2 h3{
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+section.allelem .allFeatures{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 30px;
-    position: absolute
+    gap: 40px;
+}
+
+.elem h2{
+    color: white;
 }
 
 .elem {
@@ -68,6 +127,7 @@ section.allelem {
     overflow: hidden;
     position: relative;
     transition: all 0.2s ease;
+    
 }
 
 .elem img {

@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="shortcut icon" href="/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <div id="main">
         <section class="allelem">
-            <div class="todo elem" id="0">
-                <img src="https://plus.unsplash.com/premium_photo-1681487867978-1b83ce2625c5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                <h2>Todo List</h2>
-            </div>
-            <div class="daily elem" id="1">
-                <img src="https://images.unsplash.com/photo-1763917399450-a5c3c9d1d3e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGRhaWx5JTIwcGxhbm5lcnxlbnwwfHwwfHx8MA%3D%3D" alt="">
-                <h2>Daily Planner</h2>
-            </div>
-            <div class="moti elem" id="2">
-                <img src="https://plus.unsplash.com/premium_photo-1694743671394-60034a1b2f65?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                <h2>Motivation</h2>
-            </div>
-            <div class="pomo elem" id="3">
-                <img src="https://plus.unsplash.com/premium_photo-1742414730321-5b4d15b43fdf?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                <h2>Pomodoro tracker</h2>
-            </div>
-            <div class="goals elem" id="4">
-                <img src="https://images.unsplash.com/photo-1768280511074-3b3effe7a139?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                <h2>Daily goals</h2>
+            <header>
+                <div class="header1">
+                    <h2></h2>
+                   <h1></h1>
+                   <h4>Mumbai</h4>
+                </div>
+                <div class="header2">
+                    <h2></h2>
+                    <h4>Clear</h4>
+                    <h3 class="hum"> </h3>
+                    <h3 class="precip"></h3>
+                    <h3 class="wind"></h3> 
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://plus.unsplash.com/premium_photo-1681487867978-1b83ce2625c5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Todo List</h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://images.unsplash.com/photo-1763917399450-a5c3c9d1d3e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGRhaWx5JTIwcGxhbm5lcnxlbnwwfHwwfHx8MA%3D%3D"
+                        alt="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="moti elem" id="2">
+                    <img src="https://plus.unsplash.com/premium_photo-1694743671394-60034a1b2f65?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Motivation</h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://plus.unsplash.com/premium_photo-1742414730321-5b4d15b43fdf?q=80&w=1460&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Pomodoro tracker</h2>
+                </div>
             </div>
         </section>
 
@@ -43,8 +57,9 @@
             <div class="todo-container">
                 <div class="addtask">
                     <form>
-                       <input id="task-input" type="text" placeholder="Enter Your Task Here">
-                        <textarea placeholder="Enter Your Task Description" id="textarea" cols="30" rows="10"></textarea>
+                        <input id="task-input" type="text" placeholder="Enter Your Task Here">
+                        <textarea placeholder="Enter Your Task Description" id="textarea" cols="30"
+                            rows="10"></textarea>
                         <div class="mark-imp">
                             <input type="checkbox" name="" id="checkbox">
                             <label for="checkbox">Mark as Important!</label>
@@ -53,7 +68,7 @@
                     </form>
                 </div>
                 <div class="alltask">
-                    
+
                 </div>
             </div>
         </section>
@@ -61,9 +76,9 @@
         <section class="page planner">
             <button class="close" id="1"><i class="ri-arrow-left-long-line"></i> Close</button>
             <h2>Daily Planner </h2>
-            
+
             <div class="dayplanner">
-                
+
             </div>
         </section>
 
@@ -96,7 +111,7 @@
                 <button class="start-timer">Start</button>
                 <button class="pause-timer">Pause</button>
                 <button class="reset-timer">Reset</button>
-                
+
             </div>
         </section>
 
@@ -111,4 +126,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
